@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProyectoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/prueba', [ProyectoController::class, 'index']);
+
+//PROYECTOS
+Route::get('/proyecto', [ProyectoController::class, 'index'])->name('proyecto.index');
+Route::get('/proyecto/create', [ProyectoController::class, 'create'])->name('proyecto.create');
+Route::post('/proyecto/store', [ProyectoController::class, 'store'])->name('proyecto.store');
+Route::get('/proyecto/{proyecto}/edit', [ProyectoController::class, 'edit'])->name('proyecto.edit');
+Route::put('/proyecto/{proyecto}', [ProyectoController::class, 'update'])->name('proyecto.update');
+Route::get('/proyecto/{proyecto}', [ProyectoController::class, 'destroy'])->name('proyecto.destroy');
