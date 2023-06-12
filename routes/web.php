@@ -14,12 +14,10 @@ use App\Http\Controllers\ProyectoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-Route::get('/prueba', [ProyectoController::class, 'index']);
+
+Route::get('/', [ProyectoController::class, 'index']);
 
 //PROYECTOS
 Route::get('/proyecto', [ProyectoController::class, 'index'])->name('proyecto.index');
