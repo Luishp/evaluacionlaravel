@@ -28,3 +28,5 @@ Route::post('/proyecto/store', [ProyectoController::class, 'store'])->name('proy
 Route::get('/proyecto/{proyecto}/edit', [ProyectoController::class, 'edit'])->name('proyecto.edit');
 Route::put('/proyecto/{proyecto}', [ProyectoController::class, 'update'])->name('proyecto.update');
 Route::get('/proyecto/{proyecto}', [ProyectoController::class, 'destroy'])->name('proyecto.destroy');
+
+Route::get('/pdf/{proyecto}', [ProyectoController::class, 'getPDF'])->name('proyecto.pdf');

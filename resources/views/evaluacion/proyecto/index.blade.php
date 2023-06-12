@@ -39,6 +39,7 @@
                     <td>
                         <a href="{{ route('proyecto.edit', $proyecto->id) }}">Editar</a>
                         <a href="{{ route('proyecto.destroy', $proyecto->id) }}">Eliminar</a>
+                        <a href="{{ route('proyecto.pdf', $proyecto->id) }}">Reporte</a>
                     </td>
                 </tr>
             @endforeach

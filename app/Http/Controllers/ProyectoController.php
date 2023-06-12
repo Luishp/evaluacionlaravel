@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
+use PDF;
 
 class ProyectoController extends Controller
 {
+    public function getPDF($id){
+        $proyecto = Proyecto::findOrFail($id);
+
+        if($proyecto == null){
+            abort(404);
+        }
+
+        
+        $pdf = PDF::loadView('evaluacion.proyecto.reporte',compact('proyecto'));
+        return $pdf->stream('reporte.pdf');
+    }
     /**
      * Display a listing of the resource.
      */
